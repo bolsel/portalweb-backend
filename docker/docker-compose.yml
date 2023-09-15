@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db-prod:
+    image: supabase/postgres:15.1.0.42-rc2
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-data-prod:/var/lib/postgresql/data
+
+volumes:
+  db-data-prod:
