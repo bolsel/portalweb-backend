@@ -15,17 +15,17 @@ start-app: init-app
 
 build-image: pack-app
 	docker build \
-		--cache-from upiksaleh/portalweb-backend-app:$(version) \
-		-t upiksaleh/portalweb-backend-app:$(version) \
+		--cache-from bolsel/portalweb-backend:$(version) \
+		-t bolsel/portalweb-backend:$(version) \
 		./app/
-	docker tag upiksaleh/portalweb-backend-app:$(version) upiksaleh/portalweb-backend-app:latest
+	docker tag bolsel/portalweb-backend:$(version) bolsel/portalweb-backend:latest
 
 push-image: build-image
-	docker push upiksaleh/portalweb-backend-app --all-tags
+	docker push bolsel/portalweb-backend --all-tags
 
 enter-image: init-app
 	docker run \
 		--rm \
 		-it \
-		upiksaleh/portalweb-backend-app:$(version) \
+		bolsel/portalweb-backend:$(version) \
 		/bin/sh
