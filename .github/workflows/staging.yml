@@ -1,9 +1,6 @@
 name: Build
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'main'
 
 env:
   DOCKERHUB_IMAGE: ${{ github.repository }}
