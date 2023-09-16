@@ -4,9 +4,9 @@ const path = require('path');
 
 const packagesInWorkSpace = execSync('pnpm ls --depth -1 -r --json');
 
-const list = JSON.parse(String(packagesInWorkSpace)).filter((pkg) => pkg.name !== '@portalweb/backend-app');
+const list = JSON.parse(String(packagesInWorkSpace)).filter((pkg) => pkg.name !== '@portalweb/backend');
 
-const appDir = path.resolve(__dirname, '..', 'app');
+const appDir = path.resolve(__dirname, '..');
 
 const appPackageJson = require(path.resolve(appDir, 'package.json'));
 
