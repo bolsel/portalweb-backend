@@ -15,7 +15,7 @@ export default defineHook((fn, context) => {
     return input;
   };
 
-  const collections: string[] = ['documents', 'news', 'organization_documents', 'web_news'];
+  const collections: string[] = ['documents', 'news', 'organization_documents', 'public_services', 'web_news'];
 
   collections.forEach((collection) => {
     filter(`${collection}.items.create`, (_input, { collection }, { database }) =>
