@@ -23,7 +23,7 @@ FROM node:${NODE_VERSION}
 # Default environment variables
 # (see https://docs.directus.io/reference/environment-variables/)
 ENV \
-  PORT=80 \
+  PORT=8080 \
   EXTENSIONS_PATH="/app/extensions" \
   STORAGE_LOCAL_ROOT="/app/uploads"
 
@@ -58,5 +58,5 @@ VOLUME \
   /app/extensions \
   /app/uploads
 
-EXPOSE 80
+EXPOSE 8080
 CMD npx directus bootstrap && npx directus start
